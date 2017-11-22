@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E0474C</color>
+    <color name="colorPrimaryDark">#B11A21</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="jianshu_black2">#3c3c3c</color>
+    <color name="jianshu_topic_title_color">#363636</color>
+
+</resources>

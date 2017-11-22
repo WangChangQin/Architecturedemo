@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion build_versions.target_sdk
+    defaultConfig {
+        applicationId "com.changqin.architecturedemo"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // Support libraries
+    implementation deps.support.app_compat
+    implementation deps.support.v4
+    implementation deps.support.design
+    implementation deps.support.cardview
+    // Architecture components
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.extensions
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    annotationProcessor deps.lifecycle.compiler
+    implementation deps.room.runtime
+    annotationProcessor deps.room.compiler
+    //okhttp
+    implementation deps.okhttp.runtime
+    debugImplementation deps.okhttp.log
+    //retrofit
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
+    //gson
+    implementation deps.gson.runtime
+    implementation project(':wcqlibrary')
+    //glide
+    implementation deps.glide
+
+}
