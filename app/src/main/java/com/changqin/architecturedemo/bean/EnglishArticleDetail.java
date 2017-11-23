@@ -1,9 +1,19 @@
 package com.changqin.architecturedemo.bean;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
+
 /**
  * Created by wangchangqin on 2017/9/13.
  */
-
+@Entity(tableName = "english_detail",foreignKeys = {
+        @ForeignKey(entity = EnglishArticleData.class,
+                parentColumns = "NewsId",
+                childColumns = "NewsId",
+                onDelete = ForeignKey.CASCADE)},indices = {
+        @Index(value = "NewsId")
+})
 public class EnglishArticleDetail {
     /**
      * ImgPath :

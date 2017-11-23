@@ -1,9 +1,12 @@
 package com.changqin.architecturedemo.bean;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
 /**
  * Created by wangchangqin on 2017/9/13.
  */
-
+@Entity(tableName = "englishLists")
 public class EnglishArticleData {
     /**
      * CreatTime : 2017-09-13 15:08:39.0
@@ -23,7 +26,9 @@ public class EnglishArticleData {
      * TopicId : 101
      * ReadCount : 157
      */
-
+    @PrimaryKey
+    private String NewsId;
+    private String Uid;
     private String CreatTime;
     private String HardWeight;
     private String Category;
@@ -33,8 +38,6 @@ public class EnglishArticleData {
     private String Pic;
     private String Flag;
     private String Source;
-    private String NewsId;
-    private String Uid;
     private String DescCn;
     private String Title_cn;
     private String WordCount;
